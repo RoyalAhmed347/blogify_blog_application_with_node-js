@@ -1,0 +1,30 @@
+<html lang="en">
+  <head>{{>header}}
+    <title>Create your account</title>
+  </head>
+  <body>
+   {{>navbar}}
+   <div class="container mt-3">
+
+  <h1>Singup</h1>
+
+  <form action="/user/singup" method="post">
+  <div class="mb-3">
+    <label for="name" class="form-label">Full Name</label>
+    <input type="text" name="fullName" class="form-control" id="name" aria-describedby="name">
+  </div>
+  <div class="mb-3">
+    <label for="email" class="form-label">Email address</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password" class="form-control" name="password" id="exampleInputPassword1">
+  </div>
+ 
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+    {{>script}}
+  </body>
+</html>

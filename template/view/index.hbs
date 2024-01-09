@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>{{>header}}
+    <title>Home</title>
+  </head>
+  <body>
+   {{>navbar}}
+   <div class="container mt-3">
+
+  <h1>Home</h1>
+{{!-- <h4>{{user.email}}</h4>   --}}
+
+<div class="container mt-3">
+  <div class="row  row-cols-3"> 
+  {{#each blogs }}
+  <div class="col">
+<div class="card col" style="width: 18rem;">
+  <img src="{{this.coverImageURL}}" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{this.title}}</h5>
+    {{!-- <p class="card-text">{{this.content}}</p> --}}
+    <a href="/blog/v/{{this._id}}" class="btn btn-primary">View</a>
+  </div>
+</div>
+</div>
+
+{{/each}}
+</div>
+</div>
+</div>
+    {{>script}}
+  </body>
+</html>

@@ -1,0 +1,106 @@
+<html lang="en">
+
+<head>{{>header}}
+    <title>User Profile</title>
+</head>
+<style>
+    .student-profile .card {
+        border-radius: 10px;
+    }
+
+    .student-profile .card .card-header .profile_img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;
+        margin: 10px auto;
+        border: 10px solid #ccc;
+        border-radius: 50%;
+    }
+
+    .student-profile .card h3 {
+        font-size: 20px;
+        font-weight: 700;
+    }
+
+    .student-profile .card p {
+        font-size: 16px;
+        color: #000;
+    }
+
+    .student-profile .table th,
+    .student-profile .table td {
+        font-size: 14px;
+        padding: 5px 10px;
+        color: #000;
+    }
+</style>
+
+<body>
+    {{>navbar}}
+    <div class="container mt-3">
+
+        <h1>User Profile</h1>
+        {{!-- <h4>{{user.email}}</h4> --}}
+
+        <div class="container mt-3">
+            <div class="student-profile py-4">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-lg-4">
+                            <div class="card shadow-sm">
+                                <div class="card-header bg-transparent text-center">
+                                    <img class="profile_img" src="{{user.profileImageUrl}}" alt="student dp">
+                                    <h3>{{user.fullName}}</h3>
+                                </div>
+                                <div class="card-body">
+                                    <p class="mb-0"><strong class="pr-1">Email:</strong>{{user.email}}</p>
+                                    <p class="mb-0"><strong class="pr-1">Role:</strong>{{user.role}}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="card shadow-sm">
+                                <div class="card-header bg-transparent border-0">
+                                    <h3 class="mb-0"><i class="far fa-clone pr-1"></i>Update Information</h3>
+                                </div>
+                                <div class="card-body pt-0">
+                                    <form action="/user/userProfiles" method="get" enctype="multipart/form-data">
+                                        <div class="mb-3">
+                                            <label for="profileImageUrl" class="form-label">Profile Image</label>
+                                            <input type="file" class="form-control" name="profileImageUrl"
+                                            value="./images/defulte.png"
+                                                accept="image/x-png,image/gif,image/jpeg" id="profileImageUrl">
+                                        </div>
+
+                                        <div class="mb-3">
+                                            <label for="fullName" class="form-label">Full Name</label>
+                                            <input type="text" translate="no" class="form-control"  name="fullName"
+                                            value="{{user.fullName}}"
+                                                id="fullName" aria-describedby="fullName">
+                                        </div>
+                                        <div class="mb-3">
+                                            <label for="email" class="form-label">Email</label>
+                                            <input type="text" translate="no" class="form-control" name="email"
+                                            value="{{user.email}}"
+                                                id="email" aria-describedby="email">
+                                        </div>
+
+                                        
+
+
+                                        <button type="submit" class="btn btn-primary">Submit</button>
+                                    </form>
+                                </div>
+                            </div>
+                            <div style="height: 26px"></div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{>script}}
+</body>
+
+</html>

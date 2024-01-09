@@ -1,0 +1,32 @@
+<html lang="en">
+  <head>{{>header}}
+    <title>Add new blog</title>
+  </head>
+  <body>
+   {{>navbar}}
+   <div class="container mt-3">
+  <h1>Add new blog</h1>
+
+  <form action="/blog/add-new" method="post" enctype="multipart/form-data">
+  <div class="mb-3">
+    <label for="coverImg" class="form-label">Cover Image</label>
+    <input type="file"  class="form-control" name="coverImage" accept="image/x-png,image/gif,image/jpeg" id="coverImg">
+  </div>
+
+  <div class="mb-3">
+    <label for="title" class="form-label">Title</label>
+    <input type="text" translate="no" class="form-control" name="title" id="title" aria-describedby="title">
+  </div>
+  
+  <div class="mb-3">
+    <label for="content" class="form-label">Enter your content</label>
+  <textarea class="form-control" id="content" name="content" rows="3"></textarea> 
+   </div>
+   
+  
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</div>
+    {{>script}}
+  </body>
+</html>
